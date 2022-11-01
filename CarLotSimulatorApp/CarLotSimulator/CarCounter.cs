@@ -9,10 +9,6 @@ namespace CarLotSimulator
     public static class CarCounter
     {
         public static int numberOfCars = 1;
-        
-        
-            
-
     }
     
 }

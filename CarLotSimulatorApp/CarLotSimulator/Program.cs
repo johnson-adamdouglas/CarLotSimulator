@@ -8,8 +8,8 @@ namespace CarLotSimulator
         {
             CarLot myLot = new CarLot();
             
-
-
+            //Three ways to instantiate new objects
+            //Dot notation
             Car myCar = new Car();
             myCar.Year = 2015;
             myCar.Make = "Ford";
@@ -17,12 +17,13 @@ namespace CarLotSimulator
             myCar.EngineNoise = "Vrooom!";
             myCar.HonkNoise = "Honk! Honk! Honk!";
             myCar.IsDriveable = true;
-            myCar.MakeEngineNoise();
-            myCar.MakeHonkNoise();
+            //myCar.MakeEngineNoise(myCar.EngineNoise);
+            //myCar.MakeHonkNoise(myCar.HonkNoise);
             myLot.CarList.Add(myCar);
 
             Console.WriteLine();
 
+            //Object Initializer
             Car notMyCar = new Car()
             {
                 Year = 1984,
@@ -32,17 +33,51 @@ namespace CarLotSimulator
                 HonkNoise = "Beep beep ahooooga",
                 IsDriveable = true
             };
-            notMyCar.MakeEngineNoise();
-            notMyCar.MakeHonkNoise();
+            //notMyCar.MakeEngineNoise(notMyCar.EngineNoise);
+            //notMyCar.MakeHonkNoise(notMyCar.HonkNoise);
             myLot.CarList.Add(notMyCar);
 
             Console.WriteLine();
 
+            //Custom Constructor
             Car dreamCar = new Car(2050, "Ford", "Mustang", "Ziiiipppyyyyy!", "Getouttamyway!!!!!", true);
-            dreamCar.MakeEngineNoise();
-            dreamCar.MakeHonkNoise();
+            //dreamCar.MakeEngineNoise(dreamCar.EngineNoise);
+            //dreamCar.MakeHonkNoise(dreamCar.HonkNoise);
             myLot.CarList.Add(dreamCar);
 
+            Console.WriteLine();
+
+            Car fastCar = new Car()
+            {
+                Make = "Ford",
+                Model = "Mustang",
+                Year = 2015,
+                EngineNoise = "zoom",
+                HonkNoise = "Beep",
+            };
+            myLot.CarList.Add(fastCar);
+
+            Car escape = new Car()
+            {
+                Make = "Ford",
+                Model = "Escape",
+                Year = 2016,
+                EngineNoise = "Sputter",
+                HonkNoise = "Beep Beep"
+            };
+            myLot.CarList.Add(escape);
+
+            Car explorer = new Car()
+            {
+                Make = "Ford",
+                Model = "Explorer",
+                Year = 2008,
+                EngineNoise = "Roar",
+                HonkNoise = "Beep Beep"
+            };
+            myLot.CarList.Add(explorer);
+
+            Console.WriteLine($"Number of cars created: {CarCounter.numberOfCars}");
             Console.WriteLine();
 
             foreach(Car car in myLot.CarList)

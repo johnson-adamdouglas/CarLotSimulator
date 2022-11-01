@@ -8,8 +8,10 @@ namespace CarLotSimulator
 {
     public class CarLot
     {
+        //class properties
         public List<object> CarList { get; set; }
 
+        //object initializer constructor
         public CarLot()
         {
             CarList = new List<object>();
